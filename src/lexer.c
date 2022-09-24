@@ -87,7 +87,6 @@ static struct token *handle_whitespace()
 
 const char *read_number_str()
 {
-    const char *num = NULL;
     struct buffer *buffer = buffer_create();
     char c = peekc();
     LEX_GETC_IF(buffer, c, (c >= '0' && c <= '9'));

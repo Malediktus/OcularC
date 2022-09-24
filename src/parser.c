@@ -57,7 +57,6 @@ int parse_next()
     if (!token)
         return -1;
 
-    int res = 0;
     switch (token->type)
     {
     case TOKEN_TYPE_NUMBER:

@@ -33,7 +33,7 @@ struct node *node_pop()
 
     vector_pop(node_vector);
 
-    if (last_node = last_node_root)
+    if (last_node == last_node_root)
     {
         vector_pop(node_vector_root);
     }
@@ -45,7 +45,7 @@ struct node *node_create(struct node *_node)
 {
     struct node *node = malloc(sizeof(struct node));
     memcpy(node, _node, sizeof(struct node));
-#warning "We should set the binded owner and function here"
+    // TODO "We should set the binded owner and function here"
     node_push(node);
     return node;
 }

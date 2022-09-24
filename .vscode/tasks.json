@@ -8,7 +8,8 @@
                 "cwd": "${workspaceFolder}",
             },
             "args": [
-                "all"
+                "all",
+                "-B"
             ],
             "problemMatcher": [
                 "$gcc"
