@@ -10,8 +10,7 @@ OBJECTS := $(addprefix build/,$(SOURCES:%.c=%.o))
 all: compiler
 
 compiler: $(OBJECTS)
-	@echo "================= Linking ================="
-	@echo "$(OBJECTS)"
+	@echo "Linking $(OBJECTS)"
 	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJECTS) -g -o ./build/main
 
 build/src/%.o: src/%.c
@@ -23,5 +22,4 @@ clean:
 	rm -rf $(OBJECTS)
 
 run: all
-	@echo "================ Executing ================"
 	@./build/main

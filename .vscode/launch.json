@@ -15,16 +15,19 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "targetArchitecture": "x64",
-            "logging": {
-                "programOutput": true,
-                "engineLogging": false,
-                "exceptions": true,
-                "moduleLoad": false,
-                "trace": false,
-                "traceResponse": false,
-            },
             "externalConsole": false,
-            "MIMode": "lldb"
+            "MIMode": "lldb",
+            "osx": {
+                "externalConsole": true,
+                "logging": {
+                    "programOutput": true,
+                    "engineLogging": false,
+                    "exceptions": true,
+                    "moduleLoad": false,
+                    "trace": false,
+                    "traceResponse": false,
+                },
+            }
         }
     ]
 }
