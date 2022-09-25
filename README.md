@@ -2,6 +2,10 @@
 
 ## A C Compiler
 
+<img src="Logo.png"/>
+
+#
+
 - Native compiler of OcularOS
 
 ### Additional Features
