@@ -1,33 +1,42 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "(lldb) Starten",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/main",
-            "args": [],
-            "preLaunchTask": "build",
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "targetArchitecture": "x64",
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "osx": {
-                "externalConsole": true,
-                "logging": {
-                    "programOutput": true,
-                    "engineLogging": false,
-                    "exceptions": true,
-                    "moduleLoad": false,
-                    "trace": false,
-                    "traceResponse": false,
-                },
-            }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(lldb) Starten",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/main",
+      "args": [],
+      "preLaunchTask": "build",
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "targetArchitecture": "x64",
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "osx": {
+        "externalConsole": true,
+        "logging": {
+          "programOutput": true,
+          "engineLogging": false,
+          "exceptions": true,
+          "moduleLoad": false,
+          "trace": false,
+          "traceResponse": false
         }
-    ]
+      }
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "/Users/malediktus/Development/OcularC/src",
+      "program": "/Users/malediktus/Development/OcularC/src/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb"
+    }
+  ]
 }

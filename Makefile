@@ -23,3 +23,7 @@ clean:
 
 run: all
 	@./build/main
+
+install: all
+	cp build/main ./ocularc
+	mv ./ocularc /usr/bin/
