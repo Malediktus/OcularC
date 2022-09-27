@@ -28,5 +28,6 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
-  ]
+  ],
+  "license.author": "Nico Grundei"
 }
