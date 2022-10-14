@@ -4,8 +4,7 @@
 
 int main()
 {
-    system("clear"); // TODO: Remove in release
-    int res = compile_file("example.c", "example", 0);
+    int res = compile_file("example.oc", "example", 0);
     if (res == COMPILER_FILE_COMPILED_OK)
         printf("\x1B[32mCompiled successfully\x1B[0m\n");
     else if (res == COMPILER_FAILED_WITH_ERRORS)
@@ -15,5 +14,5 @@ int main()
         printf("\x1B[31mUnknown responce\x1B[0m\n");
     }
 
-    return 1;
+    return 0;
 }

@@ -29,5 +29,8 @@
     "**/.vscode",
     "**/.vscode/**"
   ],
-  "license.author": "Nico Grundei"
+  "license.author": "Nico Grundei",
+  "files.associations": {
+    "compiler.h": "c"
+  }
 }

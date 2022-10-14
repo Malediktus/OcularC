@@ -1,6 +1,5 @@
 CC=gcc
 
-OBJECTS_MAN=build/compiler.o build/cprocess.o build/helpers/buffer.o build/helpers/vector.o build/lex_process.o build/lexer.o build/token.o build/parser.o build/node.o
 INCLUDES=-I./src
 CFLAGS=#-Wall -Wextra
 

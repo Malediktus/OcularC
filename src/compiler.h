@@ -160,6 +160,20 @@ struct scope
     struct scope *parent;
 };
 
+enum
+{
+    SYMBOL_TYPE_NODE,
+    SYMBOL_TYPE_NATIVE_FUNCTION,
+    SYMBOL_TYPE_UNKNOWN,
+};
+
+struct symbol
+{
+    const char *name;
+    int type;
+    void *data;
+};
+
 struct compile_process
 {
     // The flags in regards to how this file should be compiled
@@ -184,6 +198,12 @@ struct compile_process
         struct scope *root;
         struct scope *current;
     } scope;
+
+    struct
+    {
+        struct vector *table;  // The current active symbol table
+        struct vector *tables; // All symbol tables
+    } symbols;
 };
 
 enum
@@ -231,6 +251,36 @@ enum
     NODE_FLAG_INSIDE_EXPRESSION = 0b00000001
 };
 
+struct array_brackets
+{
+    // vector of nodes pointers
+    struct vector *n_brackets;
+};
+
+struct node;
+struct datatype
+{
+    int flags;
+    int type;
+
+    struct datatype *secondary;
+    const char *type_str;
+    size_t size;
+    int pointer_depth;
+
+    union
+    {
+        struct node *struct_node;
+        struct node *union_node;
+    };
+
+    struct array
+    {
+        struct array_brackets *brackets;
+        size_t size;
+    } array;
+};
+
 struct node
 {
     int type;
@@ -255,6 +305,18 @@ struct node
             struct node *right;
             const char *op;
         } exp;
+
+        struct var
+        {
+            struct datatype type;
+            const char *name;
+            struct node *val;
+        } var;
+
+        struct varlist
+        {
+            struct vector *list;
+        } var_list;
     };
 
     union
@@ -294,23 +356,6 @@ enum
     DATA_TYPE_STRUCT,
     DATA_TYPE_UNION,
     DATA_TYPE_UNKNOWN,
-};
-
-struct datatype
-{
-    int flags;
-    int type;
-
-    struct datatype *secondary;
-    const char *type_str;
-    size_t size;
-    int pointer_depth;
-
-    union
-    {
-        struct node *struct_node;
-        struct node *union_node;
-    };
 };
 
 enum

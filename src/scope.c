@@ -15,7 +15,7 @@ struct scope *scope_alloc()
 
 void scope_dealloc(struct scope *scope)
 {
-    // Do nothing for now
+    // Do nothing for now.
 }
 
 struct scope *scope_create_root(struct compile_process *process)
@@ -80,15 +80,21 @@ void *scope_last_entity_at_scope(struct scope *scope)
 void *scope_last_entity_from_scope_stop_at(struct scope *scope, struct scope *stop_scope)
 {
     if (scope == stop_scope)
+    {
         return NULL;
+    }
 
     void *last = scope_last_entity_at_scope(scope);
     if (last)
+    {
         return last;
+    }
 
     struct scope *parent = scope->parent;
     if (parent)
+    {
         return scope_last_entity_from_scope_stop_at(parent, stop_scope);
+    }
 
     return NULL;
 }
@@ -105,7 +111,7 @@ void *scope_last_entity(struct compile_process *process)
 
 void scope_push(struct compile_process *process, void *ptr, size_t elem_size)
 {
-    vector_push(process->scope.current, &ptr);
+    vector_push(process->scope.current->entities, &ptr);
     process->scope.current->size += elem_size;
 }
 
